@@ -1,0 +1,110 @@
+﻿<Window x:Class="PersoContacter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PersoContacter"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="10">
+        <!-- Colonnes principales -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1.5*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Lignes -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <!-- Nom / Prénom visibles -->
+            <RowDefinition Height="Auto" />
+            <!-- Expander -->
+        </Grid.RowDefinitions>
+
+        <!-- Ligne 1 : Nom / Prénom (toujours visibles) -->
+        <TextBlock Text="Pers. à contacter :" 
+               Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" />
+        <TextBlock Text="Nom :" 
+               Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,0,0" />
+        <TextBox Grid.Row="0" Grid.Column="1" Margin="60,3,10,3" />
+
+        <TextBlock Text="Prénom :" 
+               Grid.Row="0" Grid.Column="3" VerticalAlignment="Center" />
+        <TextBox Grid.Row="0" Grid.Column="4" Margin="5,3" />
+
+        <!-- Ligne 2 : Expander contenant les autres infos -->
+        <Expander Header="Autres informations" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Margin="0,10,0,0">
+            <Grid Margin="10">
+                <!-- Colonnes internes -->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1.5*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Lignes internes -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <!-- Qualité -->
+                    <RowDefinition Height="Auto" />
+                    <!-- Adresse -->
+                    <RowDefinition Height="Auto" />
+                    <!-- Adresse 2 -->
+                    <RowDefinition Height="Auto" />
+                    <!-- CP / Ville -->
+                    <RowDefinition Height="Auto" />
+                    <!-- Téléphones -->
+                    <RowDefinition Height="Auto" />
+                    <!-- Mail -->
+                </Grid.RowDefinitions>
+
+                <!-- Qualité -->
+                <TextBlock Text="Qualité :" 
+                       Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" />
+                <ComboBox Grid.Row="0" Grid.Column="1" Width="160" Margin="5,0,0,5">
+                    <ComboBoxItem Content="Médecin" />
+                    <ComboBoxItem Content="Secrétaire" />
+                    <ComboBoxItem Content="Assistant" />
+                    <ComboBoxItem Content="Autre" IsSelected="True" />
+                </ComboBox>
+
+                <!-- Adresse -->
+                <TextBlock Text="Adresse :" 
+                       Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" />
+                <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Margin="5,0,0,5" />
+
+                <!-- Adresse complémentaire -->
+                <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Margin="5,0,0,5" />
+
+                <!-- CP / Ville -->
+                <TextBlock Text="CP :" 
+                       Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" />
+                <TextBox Grid.Row="3" Grid.Column="1" Width="80" Margin="5,0,0,5" />
+
+                <TextBlock Text="Ville :" 
+                       Grid.Row="3" Grid.Column="3" VerticalAlignment="Center" />
+                <TextBox Grid.Row="3" Grid.Column="4" Margin="5,0,0,5" />
+
+                <!-- Téléphones -->
+                <TextBlock Text="Téléphone fixe :" 
+                       Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" />
+                <TextBox Grid.Row="4" Grid.Column="1" Width="120" Margin="5,0,0,5" />
+
+                <TextBlock Text="Portable :" 
+                       Grid.Row="4" Grid.Column="3" VerticalAlignment="Center" />
+                <TextBox Grid.Row="4" Grid.Column="4" Width="120" Margin="5,0,0,5" />
+
+                <!-- Mail -->
+                <TextBlock Text="Mail :" 
+                       Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" />
+                <TextBox Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4" Margin="5,0,0,5" />
+            </Grid>
+        </Expander>
+    </Grid>
+
+</Window>

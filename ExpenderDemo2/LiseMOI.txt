@@ -1,0 +1,9 @@
+﻿🧩 Détails :
+
+✅ 6 lignes, 5 colonnes comme demandé.
+
+✅ L’Expander se replie ou se déplie pour montrer le contenu.
+
+✅ Champs “Nom” et “Prénom” visibles uniquement quand l’Expander est ouvert.
+
+✅ Alignement clair et espacement régulier pour lecture facile.

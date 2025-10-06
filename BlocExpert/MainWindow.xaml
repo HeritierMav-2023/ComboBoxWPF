@@ -1,0 +1,207 @@
+﻿<Window x:Class="BlocExpert.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BlocExpert"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="900">
+    <!--<Grid Margin="20">
+        --><!-- Définition de la grille : 8 colonnes --><!--
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        --><!-- Lignes --><!--
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            --><!-- Titre --><!--
+            <RowDefinition Height="Auto" />
+            --><!-- Type de mission / Expertise --><!--
+            <RowDefinition Height="20" />
+            --><!-- Espacement --><!--
+            <RowDefinition Height="Auto" />
+            --><!-- Médecin --><!--
+            <RowDefinition Height="Auto" />
+            --><!-- Informations médecin --><!--
+            <RowDefinition Height="20" />
+            --><!-- Espacement --><!--
+            <RowDefinition Height="Auto" />
+            --><!-- Commentaires --><!--
+            <RowDefinition Height="*" />
+            --><!-- Espace flexible --><!--
+        </Grid.RowDefinitions>
+
+        --><!-- Titre --><!--
+        <TextBlock Text="Mission"
+                   Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="8"
+                   FontSize="20" FontWeight="Bold"
+                   Margin="0 0 0 10" />
+
+        --><!-- Type de mission --><!--
+        <TextBlock Text="Type de mission :" 
+                   Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
+                   VerticalAlignment="Center" />
+        <ComboBox Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" 
+                  Width="150" SelectedIndex="0" Margin="5,0,0,0">
+            <ComboBoxItem Content="Aucune" IsSelected="True"/>
+            <ComboBoxItem Content="Mission A"/>
+            <ComboBoxItem Content="Mission B"/>
+        </ComboBox>
+
+        --><!-- Cadre de l'expertise --><!--
+        <TextBlock Text="Cadre de l’expertise :" 
+                   Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="2" 
+                   VerticalAlignment="Center" />
+        <ComboBox Grid.Row="1" Grid.Column="7" 
+                  Width="150" SelectedIndex="0">
+            <ComboBoxItem Content="Aucune" IsSelected="True"/>
+            <ComboBoxItem Content="Expertise A"/>
+            <ComboBoxItem Content="Expertise B"/>
+        </ComboBox>
+
+        --><!-- Médecin --><!--
+        <TextBlock Text="Médecin :" 
+                   Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" 
+                   VerticalAlignment="Center" />
+        <TextBox Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" 
+                 Width="150" Text="POULAIN" Margin="5,0,0,0" />
+        <Button Content="Valider" 
+                Grid.Row="3" Grid.Column="5" Grid.ColumnSpan="2" 
+                Width="100" Margin="10,0,0,0" />
+
+        --><!-- Coordonnées médecin -->
+        <!--<StackPanel Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="8" Margin="10,10,0,0">
+            <TextBlock Text="DR POULAIN  -  STEPHANE" FontWeight="Bold"/>
+            <TextBlock Text="10 Rue du Médecin" />
+            <TextBlock Text="78000 Versailles" />
+            <TextBlock Text="01 02 03 04 05" />
+            <TextBlock Text="dr-poulain@hotmail.fr" />
+        </StackPanel>-->
+        
+
+        <!-- Commentaires --><!--
+        <TextBlock Text="Commentaires :" 
+                   Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" 
+                   VerticalAlignment="Top" />
+        <TextBox Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="6" 
+                 Height="100" Margin="5,0,0,0" 
+                 AcceptsReturn="True" TextWrapping="Wrap" />
+    </Grid>-->
+    <Grid Margin="20">
+        <!-- Grille principale à 8 colonnes -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Lignes -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <!-- Titre -->
+            <RowDefinition Height="Auto" />
+            <!-- Type mission / Expertise -->
+            <RowDefinition Height="20" />
+            <!-- Espace -->
+            <RowDefinition Height="Auto" />
+            <!-- Médecin -->
+            <RowDefinition Height="Auto" />
+            <!-- Coordonnées médecin -->
+            <RowDefinition Height="20" />
+            <!-- Espace -->
+            <RowDefinition Height="Auto" />
+            <!-- Commentaires -->
+            <RowDefinition Height="*" />
+            <!-- Espace flexible -->
+        </Grid.RowDefinitions>
+
+        <!-- Titre -->
+        <TextBlock Text="Mission"
+                   Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="8"
+                   FontSize="22" FontWeight="Bold"
+                   Margin="0 0 0 15" />
+
+        <!-- Type de mission -->
+        <TextBlock Text="Type de mission :" 
+                   Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
+                   VerticalAlignment="Center" />
+        <ComboBox Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" 
+                  Width="160" Margin="5,0,0,0" SelectedIndex="0">
+            <ComboBoxItem Content="Aucune" IsSelected="True"/>
+            <ComboBoxItem Content="Mission A"/>
+            <ComboBoxItem Content="Mission B"/>
+        </ComboBox>
+
+        <!-- Cadre de l'expertise -->
+        <TextBlock Text="Cadre de l’expertise :" 
+                   Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="2" 
+                   VerticalAlignment="Center" />
+        <ComboBox Grid.Row="1" Grid.Column="7" 
+                  Width="160" SelectedIndex="0">
+            <ComboBoxItem Content="Aucune" IsSelected="True"/>
+            <ComboBoxItem Content="Expertise A"/>
+            <ComboBoxItem Content="Expertise B"/>
+        </ComboBox>
+
+        <!-- Médecin -->
+        <TextBlock Text="Médecin :" 
+                   Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" 
+                   VerticalAlignment="Center" />
+        <TextBox Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" 
+                 Width="150" Text="POULAIN" Margin="5,0,0,0" />
+        <Button Content="Valider" 
+                Grid.Row="3" Grid.Column="5" Grid.ColumnSpan="2" 
+                Width="100" Margin="10,0,0,0" />
+
+        <!-- Coordonnées médecin -->
+        <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="8" Margin="10,10,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="4*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Nom et prénom -->
+            <TextBlock Text="DR POULAIN"
+                       Grid.Column="1"
+                       FontWeight="Bold"
+                       VerticalAlignment="Center" />
+            <TextBlock Text="STEPHANE"
+                       Grid.Column="2"
+                       FontWeight="Bold"
+                       VerticalAlignment="Center" />
+
+            <!-- Coordonnées -->
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="10 Rue du Médecin" />
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="78000 Versailles" />
+            <TextBlock Grid.Column="1" Grid.Row="3" Text="01 02 03 04 05" />
+            <TextBlock Grid.Column="2" Grid.Row="3" Text="dr-poulain@hotmail.fr" />
+        </Grid>
+
+        <!-- Commentaires -->
+        <TextBlock Text="Commentaires :" 
+                   Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" 
+                   VerticalAlignment="Top" />
+        <TextBox Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="6" 
+                 Height="100" Margin="5,0,0,0" 
+                 AcceptsReturn="True" TextWrapping="Wrap" />
+    </Grid>
+</Window>
