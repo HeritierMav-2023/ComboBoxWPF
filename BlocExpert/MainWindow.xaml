@@ -94,6 +94,12 @@
                  Height="100" Margin="5,0,0,0" 
                  AcceptsReturn="True" TextWrapping="Wrap" />
     </Grid>-->
+    <Window.Resources>
+        <local:BoolToVisibilityConverter x:Key="BoolToVisConverter"/>
+    </Window.Resources>
+    <Window.DataContext>
+        <local:MaViewModel/>
+    </Window.DataContext>
     <Grid Margin="20">
         <!-- Grille principale à 8 colonnes -->
         <Grid.ColumnDefinitions>
@@ -166,7 +172,7 @@
                 Width="100" Margin="10,0,0,0" />
 
         <!-- Coordonnées médecin -->
-        <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="8" Margin="10,10,0,0">
+        <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="8" Margin="10,10,0,0" Visibility="{Binding HasMedecinDetails, Converter={StaticResource BoolToVisConverter}}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
