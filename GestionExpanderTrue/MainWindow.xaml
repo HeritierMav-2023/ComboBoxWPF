@@ -1,0 +1,52 @@
+﻿<Window x:Class="GestionExpanderTrue.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestionExpanderTrue"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:MainViewModel />
+    </Window.DataContext>
+    <Grid>
+        <Expander Header="Options avancées"
+                  IsExpanded="{Binding IsExpanded, Mode=TwoWay}"
+                  Padding="8"
+                  >
+            <!-- Behavior binding :
+                 - SelectedValue bound to SelectedOption (OneWay)
+                 - BlockValue set to "Aucun" => si SelectedOption == "Aucun", empêche la fermeture -->
+            <Expander.Resources>
+                <!-- nothing -->
+            </Expander.Resources>
+
+            <!-- Attacher la behavior -->
+            <local:ExpanderPreventCollapseBehavior.SelectedValue
+                Binding="{Binding SelectedOption, Mode=OneWay}" />
+            <!-- Note: L'attributed syntax ci-dessus peut ne pas fonctionner selon la version XAML.
+                 Alternative : attacher via propriété dans Expander tag (voir variante juste après). -->
+
+            <!-- Variante sûre (utilisée ci-dessous) : on définit les propriétés via Setter-style -->
+            <Expander.Style>
+                <Style TargetType="Expander">
+                    <Setter Property="local:ExpanderPreventCollapseBehavior.SelectedValue"
+                            Value="{Binding SelectedOption, Mode=OneWay}" />
+                    <Setter Property="local:ExpanderPreventCollapseBehavior.BlockValue"
+                            Value="Aucun" />
+                </Style>
+            </Expander.Style>
+
+            <StackPanel>
+                <TextBlock Text="Choisir une option:" Margin="0,0,0,6"/>
+                <ComboBox Width="160"
+                          ItemsSource="{Binding Options}"
+                          SelectedItem="{Binding SelectedOption, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                <Separator Margin="0,10,0,10"/>
+                <TextBlock Text="Contenu de l'expander. Si 'Aucun' est choisi, l'expander se ré-ouvrira automatiquement et ne pourra pas rester fermé." 
+                           TextWrapping="Wrap"/>
+            </StackPanel>
+        </Expander>
+    </Grid>
+</Window>
